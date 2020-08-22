@@ -3,9 +3,9 @@
  terraform apply "amghouse_terrafrom_plan"
  terraform show
 
-
+echo "# amghouse_aws_terraform" >> README.md
 git init
-git add main.tf
+git add README.md main.tf
 git status
 git commit -m "Initial commit"
 git status
