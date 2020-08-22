@@ -1,9 +1,18 @@
- terraform init
- terraform plan  -out amghouse_terrafrom_plan
- terraform apply "amghouse_terrafrom_plan"
- terraform show
+#
+#   
+#
+terraform init
+terraform plan  -out amghouse_terrafrom_plan
+terraform apply "amghouse_terrafrom_plan"
+terraform show
 
-echo "# amghouse_aws_terraform" >> README.md
+#
+#   Push to Repo 
+#
+cat > README.md <<EOF
+# amghouse_aws_terraform
+## learning Terraform
+EOF
 git init
 git add README.md main.tf
 git status
@@ -21,3 +30,4 @@ git commit -m "Add a .gitignore file"
 git status
 git remote -v add origin git@github.com:abdbaddude/amghouse_aws_terraform.git
 git push -v origin master
+# git oull origin master
