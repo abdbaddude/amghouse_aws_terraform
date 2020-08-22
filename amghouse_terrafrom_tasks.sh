@@ -34,4 +34,4 @@ git push -v origin master
 git diff
 git status
 git log
-git commit -a -m "Added VPC " 
+git commit -a -m "Added VPC  & Variables " 
