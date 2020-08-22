@@ -2,9 +2,21 @@
 #   
 #
 terraform init
+export TF_VAR_server_port=8080
 terraform plan  -out amghouse_terrafrom_plan
 terraform apply "amghouse_terrafrom_plan"
 terraform show
+#test the created single webapp
+#APP_PUBLIC_IP=$(terraform output public_ip)
+#curl ${APP_PUBLIC_IP}:${TF_VAR_server_port}
+
+#test the created cluster 2-10 webapp servers
+export TF_VAR_server_port=80
+APP_DNS =$(terraform output alb_dns_name)
+curl ${APP_DNS}:${TF_VAR_server_port}
+
+#destroy the AWS infrastructure just built
+terraform destroy 
 
 #
 #   Push to Repo 
@@ -35,3 +47,4 @@ git diff
 git status
 git log
 git commit -a -m "Added VPC  & Variables " 
+git commit -a -m "LB using Application Load Balancer ALB() " 
