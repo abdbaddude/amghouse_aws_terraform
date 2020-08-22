@@ -30,4 +30,8 @@ git commit -m "Add a .gitignore file"
 git status
 git remote -v add origin git@github.com:abdbaddude/amghouse_aws_terraform.git
 git push -v origin master
-# git oull origin master
+# git pull origin master
+git diff
+git status
+git log
+git commit -a -m "Added VPC " 
